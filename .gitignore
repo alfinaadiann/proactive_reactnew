@@ -6,8 +6,12 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+package-lock.json
+.gitignore
 
 node_modules
+
+# Build output
 dist
 dist-ssr
 *.local
