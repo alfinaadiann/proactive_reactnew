@@ -11,14 +11,14 @@ const Sidebar = () => {
         src="https://i.pinimg.com/564x/d7/d0/13/d7d013aa4c1ee9bc96fc8ee329467d34.jpg"
         width="80"
       />
-      <h2>Profil Saya</h2>
+      <h2 style={{ marginLeft: "10px" }}>Profil Saya</h2>
       </NavLink>
       <NavLink to="/HariIni"><i className="fas fa-calendar-day"></i> Hari Ini</NavLink>
-      <a href="mendatang.html"><i className="fas fa-calendar-alt"></i> Mendatang</a>
+      <NavLink to="/Mendatang"><i className="fas fa-calendar-alt"></i> Mendatang</NavLink>
       <NavLink to="/TugasSelesai"><i className="fas fa-check"></i> Tugas Selesai</NavLink>
       <a href="#"><i className="fas fa-calendar"></i> Kalender</a>
       <a href="pomodoro.html"><i className="fas fa-clock"></i> Waktu</a>
-      <a href="kolaborasi.html"><i className="fas fa-users"></i> Kolaborasi</a>
+      <NavLink to="/Kolaborasi"><i className="fas fa-users"></i> Kolaborasi</NavLink>
     </div>
   );
 };

@@ -23,9 +23,11 @@ const TugasSelesai = () => {
     }
   };
 
-  const markAsCompleted = (index, categoryIndex) => {
+  const toggleCompleted = (index, categoryIndex) => {
     const updatedTasks = [...tasks];
-    updatedTasks[categoryIndex].items.splice(index, 1, `${updatedTasks[categoryIndex].items[index]} (completed)`);
+    const item = updatedTasks[categoryIndex].items[index];
+    const isCompleted = item.includes('(completed)');
+    updatedTasks[categoryIndex].items.splice(index, 1, isCompleted ? item.replace(' (completed)', '') : `${item} (completed)`);
     setTasks(updatedTasks);
   };
 
@@ -57,10 +59,10 @@ const TugasSelesai = () => {
             <div key={categoryIndex}>
               <div className="task-category">{task.category}</div>
               {task.items.map((item, index) => (
-                <div className="task-item" key={index}>
+                <div className={`task-item ${item.includes('(completed)') ? 'completed' : ''}`} key={index}>
                   <div className="task-title">
-                    <input type="checkbox" onClick={() => markAsCompleted(index, categoryIndex)} />
-                    {item}
+                    <input type="checkbox" checked={item.includes('(completed)')} onChange={() => toggleCompleted(index, categoryIndex)} />
+                    {item.replace(' (completed)', '')}
                   </div>
                   <div className="task-time">
                     2024-11-09, 17:50 <i className="fas fa-times remove-task" onClick={() => removeTask(index, categoryIndex)}></i>

@@ -19,7 +19,7 @@ var MyClass = React.createClass({
             <a href="kolaborasi.html"><i className="fas fa-users" /> Kolaborasi</a>
           </div>
           <div className="content">
-            <h1>Kolaborasi | &nbsp;<i className="fas fa-share-alt" style={{marginRight: '10px'}} /> Bagikan</h1>
+            <h1>Kolaborasi | &nbsp;<i className="fas fa-share-alt" /> Bagikan</h1>
             <div className="task-container">
               {/* Add Task */}
               <div className="add-task">

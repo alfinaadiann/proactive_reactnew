@@ -17,7 +17,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="container">
+    <div className="pagedaftar">
       <div className="left-section">
         <div className="carousel">
           <button className="arrow left-arrow">&#10094;</button>

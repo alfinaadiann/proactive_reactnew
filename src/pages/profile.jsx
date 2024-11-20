@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import '../styles/profil.css';
+import React, { useState, useEffect } from "react";
 import Sidebar from '../components/Sidebar';
+import '../styles/profil.css';
 
 const Profile = () => {
   const [isEditable, setIsEditable] = useState(false);
@@ -13,8 +13,18 @@ const Profile = () => {
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  // Load data dari localStorage saat komponen dimuat
+  useEffect(() => {
+    const storedData = localStorage.getItem("profileData");
+    if (storedData) {
+      setFormData(JSON.parse(storedData));
+    }
+  }, []);
+
   const handleEditToggle = () => {
     if (isEditable) {
+      // Simpan data ke localStorage
+      localStorage.setItem("profileData", JSON.stringify(formData));
       alert("Perubahan telah disimpan.");
     }
     setIsEditable(!isEditable);
@@ -29,7 +39,6 @@ const Profile = () => {
   };
 
   const handlePasswordChange = () => {
-    // Logika mengganti kata sandi
     alert("Kata sandi Anda telah diperbarui.");
     setShowPasswordModal(false);
   };
@@ -37,42 +46,18 @@ const Profile = () => {
   const handleDeleteAccount = () => {
     // Logika menghapus akun
     alert("Akun Anda telah dihapus.");
+    localStorage.removeItem("profileData"); // Hapus data dari localStorage
     setShowDeleteModal(false);
   };
 
   return (
-    <div className="profile-container">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <img
-          src=".img/profil.png"
-          alt="User Profile Picture"
-        />
-        <h2>Profil Saya</h2>
-        <a href="hari ini.html">
-          <i className="fas fa-calendar-day" style={{ marginRight: "8px" }}></i> Hari Ini
-        </a>
-        <a href="mendatang.html">
-          <i className="fas fa-calendar-alt" style={{ marginRight: "8px" }}></i> Mendatang
-        </a>
-        <a href="tugas selesai.html">
-          <i className="fas fa-check" style={{ marginRight: "8px" }}></i> Tugas Selesai
-        </a>
-        <a href="#">
-          <i className="fas fa-calendar" style={{ marginRight: "8px" }}></i> Kalender
-        </a>
-        <a href="pomodoro.html">
-          <i className="fas fa-clock" style={{ marginRight: "8px" }}></i> Waktu
-        </a>
-        <a href="kolaborasi.html">
-          <i className="fas fa-users" style={{ marginRight: "8px" }}></i> Kolaborasi
-        </a>
-      </div>
+    <div className="profile">
+      <Sidebar />
 
       {/* Profile Section */}
       <div className="profile-section">
         <div className="profile-card">
-          <img src=".img/Profil.png" alt="Profile Picture" />
+          <img src="https://i.pinimg.com/564x/d7/d0/13/d7d013aa4c1ee9bc96fc8ee329467d34.jpg" alt="Profile Picture" />
           <h2>{formData.fullname}</h2>
           <p>{formData.email}</p>
           <form>
