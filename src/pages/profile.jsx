@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../styles/profil.css';
 import Sidebar from '../components/Sidebar';
 
@@ -13,8 +13,18 @@ const Profile = () => {
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  // Load data dari localStorage saat komponen dimuat
+  useEffect(() => {
+    const storedData = localStorage.getItem("profileData");
+    if (storedData) {
+      setFormData(JSON.parse(storedData));
+    }
+  }, []);
+
   const handleEditToggle = () => {
     if (isEditable) {
+      // Simpan data ke localStorage
+      localStorage.setItem("profileData", JSON.stringify(formData));
       alert("Perubahan telah disimpan.");
     }
     setIsEditable(!isEditable);
@@ -37,6 +47,7 @@ const Profile = () => {
   const handleDeleteAccount = () => {
     // Logika menghapus akun
     alert("Akun Anda telah dihapus.");
+    localStorage.removeItem("profileData"); // Hapus data dari localStorage
     setShowDeleteModal(false);
   };
 
