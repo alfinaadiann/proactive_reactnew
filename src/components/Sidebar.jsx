@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="sidebar">
+      <NavLink to="/profile">
       <img
         alt="User Profile Picture"
         height="80"
@@ -11,6 +12,7 @@ const Sidebar = () => {
         width="80"
       />
       <h2>Profil Saya</h2>
+      </NavLink>
       <NavLink to="/HariIni"><i className="fas fa-calendar-day"></i> Hari Ini</NavLink>
       <NavLink to="/Mendatang"><i className="fas fa-calendar-alt"></i> Mendatang</NavLink>
       <NavLink to="/TugasSelesai"><i className="fas fa-check"></i> Tugas Selesai</NavLink>
