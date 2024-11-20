@@ -6,6 +6,7 @@ import AboutProActive from './components/aboutproactive.jsx';
 import FiturPage from './components/fiturpage.jsx';
 import Footer from './components/footer.jsx';
 
+
 //ini buat manggil landing page//
 function landingpagemain() {
   return (

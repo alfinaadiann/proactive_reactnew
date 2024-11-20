@@ -70,22 +70,22 @@ function FiturPage() {
       <FeaturesContainer>
         <FeatureCard>
           <Judul>Tugas & Daftar</Judul>
-          <FeatureImage src="/assets/svg/Tugas daftar.svg" alt="Fitur 1" />
+          <FeatureImage src="/img/assets/svg/Tugas daftar.svg" alt="Fitur 1" />
         </FeatureCard>
 
         <FeatureCard>
           <Judul>Kalender</Judul>
-          <FeatureImage src="/assets/svg/Kalender.svg" alt="Fitur 2" />
+          <FeatureImage src="/img/assets/svg/Kalender.svg" alt="Fitur 2" />
         </FeatureCard>
 
         <FeatureCard>
           <Judul>Kolaborasi</Judul>
-          <FeatureImage src="/assets/svg/Kolaborasi.svg" alt="Fitur 3" />
+          <FeatureImage src="/img/assets/svg/Kolaborasi.svg" alt="Fitur 3" />
         </FeatureCard>
 
         <FeatureCard>
           <Judul>Waktu</Judul>
-          <FeatureImage src="/assets/svg/Waktu.svg" alt="Fitur 4" />
+          <FeatureImage src="/img/assets/svg/Waktu.svg" alt="Fitur 4" />
         </FeatureCard>
       </FeaturesContainer>
     </Section>

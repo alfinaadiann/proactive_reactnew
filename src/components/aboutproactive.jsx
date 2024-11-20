@@ -8,7 +8,7 @@ const Section = styled.section`
   background-color: #CAF5FF;
   margin-bottom: 150px;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -52,7 +52,7 @@ function AboutProActive() {
   return (
     <Section id="tentang proactive">
       <GradasiAtas />
-      <Image src="/assets/svg/gambar2.svg" alt="About ProActive" />
+      <Image src="/img/assets/svg/gambar2.svg" alt="About ProActive" />
       <div>
         <Heading>Apa itu ProActive?</Heading>
         <Paragraph>

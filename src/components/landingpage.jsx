@@ -10,7 +10,7 @@ const gradientAnimation = keyframes`
 
 const Header = styled.header`
   text-align: center;
-  padding: 10em 2em;
+  padding: 5em 2em;
   padding-bottom: 140px;
   color: #ffffff;
   background: linear-gradient(150deg, #007bff, #ffffff, #ffffff, #007bff);

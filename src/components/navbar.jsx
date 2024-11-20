@@ -5,7 +5,7 @@ const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
+  padding: 0 2em;
   background-color: #fff;
   position: sticky;
   top: 0;
@@ -61,7 +61,7 @@ function Navbar() {
   return (
     <NavbarContainer>
       <LogoContainer href="/">
-        <LogoImage src="/img/logo.png" alt="Logo" />
+        <LogoImage src="/img/assets/logo/logo biru.svg" alt="Logo" />
         <Title>
           <ProText>Pro</ProText>
           <ActiveText>Active</ActiveText>

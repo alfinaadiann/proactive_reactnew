@@ -1,6 +1,15 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  /* background: url("/public/img/bgweb.jpeg") no-repeat center center fixed; */
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
   background: url("/public/img/bgweb.jpeg") no-repeat center center fixed;
   background-size: cover;
   display: flex;
@@ -9,7 +18,7 @@ body {
 }
 
 .profile-section {
-  padding: 20px;
+  padding: 0px 110px;
   flex-grow: 1;
   display: flex;
   justify-content: center;

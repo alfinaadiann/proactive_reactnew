@@ -9,7 +9,7 @@ import styled from 'styled-components';
 const FooterContainer = styled.footer`
   background-color: #091F5B;
   color: #fff;
-  padding: 2.5em 2em;
+  padding: 0.5em 2em;
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
@@ -22,6 +22,7 @@ const LogoAndTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
 `;
 
 const LogoStyle = styled.img`
@@ -35,20 +36,19 @@ const TitleAndParagraph = styled.div`
 `;
 
 const Paragraph = styled.p`
+  margin: 0;
   font-size: 16px;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
 `;
 
 const FooterText = styled.p`
+  margin-bottom: 0px;
   font-size: 15px;
-  margin-bottom: 0.1em;
 `;
 
 const Header = styled.h3`
   font-size: 32px;
   font-weight: 900;
-  margin-top: 0.5em;
+  margin: 0.5em 0 0 0;
 `;
 
 const IconSosmed = styled.div`
@@ -110,7 +110,7 @@ function Footer() {
       <LogoAndTitle>
         <TitleAndParagraph>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <LogoStyle src="/assets/logo/logo putih.svg" alt="Footer Logo" />
+            <LogoStyle src="/img/assets/logo/logo putih.svg" alt="Footer Logo" />
             <Title>
               <ProactiveText>ProActive</ProactiveText>
             </Title>

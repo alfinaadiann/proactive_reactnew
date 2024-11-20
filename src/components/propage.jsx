@@ -21,7 +21,7 @@ const Paragraph = styled.p`
 function ProPage() {
   return (
     <Section>
-      <Image src="/assets/svg/gambar1.svg" alt="ProPage Image" />
+      <Image src="/img/assets/svg/gambar1.svg" alt="ProPage Image" />
       <Paragraph>
         Fokus pada satu daftar yang terstruktur rapi agar semua tujuanmu tercapai dengan efisien <br />
         dan tanpa hambatan. Jadikan hari-harimu lebih produktif bersama ProActive

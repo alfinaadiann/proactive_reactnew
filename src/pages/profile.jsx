@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import '../styles/profil.css';
 import Sidebar from '../components/Sidebar';
+import '../styles/profil.css';
 
 const Profile = () => {
   const [isEditable, setIsEditable] = useState(false);
@@ -39,7 +39,6 @@ const Profile = () => {
   };
 
   const handlePasswordChange = () => {
-    // Logika mengganti kata sandi
     alert("Kata sandi Anda telah diperbarui.");
     setShowPasswordModal(false);
   };

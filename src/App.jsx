@@ -15,12 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Route untuk setiap halaman */}
-        {/* <Route path="/" element={<LandingPage />} /> */}
-        {/* <Route path="/ProPage" element={<ProPage />} /> */}
-        {/* <Route path="/AboutProActive" element={<AboutProActive />} /> */}
-        {/* <Route path="/FiturPage" element={<FiturPage />} /> */}
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />}/>
         <Route path="/HariIni" element={<HariIni />} />
         <Route path="/TugasSelesai" element={<TugasSelesai />} />
         <Route path="/Login" element={<Login />} />
