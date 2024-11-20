@@ -45,9 +45,9 @@ const Daftar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { nama, username, email, noHandphone, password, konfirmasiPassword } = formData;
+    const { fullname, username, email, noHandphone, password, konfirmasiPassword } = formData;
 
-    if (!nama || !username || !email || !noHandphone || !password || !konfirmasiPassword) {
+    if (!fullname || !username || !email || !noHandphone || !password || !konfirmasiPassword) {
       setErrorMessage("Harap isi semua kolom.");
       return;
     }
