@@ -1,7 +1,14 @@
+.mendatang {
+  background: url("/public/img/bgweb.jpeg") no-repeat center center fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
 .mendatang .content {
     margin-left: 250px;
     padding: 2% 6.5%;
     width: calc(100% - 250px);
+    background: url("/public/img/bgweb.jpeg") no-repeat center center fixed;
   }
   
   .mendatang .heading {

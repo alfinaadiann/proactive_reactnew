@@ -13,7 +13,7 @@ const App = () => {
   const addBoard = () => {
     const newBoard = {
       id: Date.now(),
-      day: dayNames[currentDayIndex],
+      day: dayNames[(currentDayIndex + 1) % dayNames.length],
       tasks: []
     };
     setBoards([...boards, newBoard]);

@@ -22,15 +22,15 @@ const Daftar = () => {
   };
 
   return (
-    <div className="container">
+    <div className="pagedaftar">
       <div className="left-section">
         <div className="carousel">
           <button className="arrow left-arrow" onClick={() => changeSlide(-1)}>
             &#10094;
           </button>
-          <img src="/img/illustration1.png" alt="Illustration" style={{ display: currentSlide === 0 ? "block" : "none" }} />
-          <img src="/img/illustration2.png" alt="Illustration" style={{ display: currentSlide === 1 ? "block" : "none" }} />
-          <img src="/img/illustration3.png" alt="Illustration" style={{ display: currentSlide === 2 ? "block" : "none" }} />
+          <img src="/img/illustration1.png" alt="Illustration" style={{ display: currentSlide === 0 ? "block" : "none", width: "70%" }} />
+          <img src="/img/illustration2.png" alt="Illustration" style={{ display: currentSlide === 1 ? "block" : "none", width: "70%" }} />
+          <img src="/img/illustration3.png" alt="Illustration" style={{ display: currentSlide === 2 ? "block" : "none", width: "70%" }} />
           <button className="arrow right-arrow" onClick={() => changeSlide(1)}>
             &#10095;
           </button>
@@ -40,10 +40,7 @@ const Daftar = () => {
 
       <div className="right-section">
         <div className="content">
-          <div className="logo">
-            <img src="/img/logo.png" alt="ProActive Logo" />
-          </div>
-          <h1>Buat akun</h1>
+          <h1 style={{ marginTop: "-30px" }}>Buat akun</h1>
           <p>Silahkan lengkapi data dibawah ini untuk membuat akun</p>
 
           <form onSubmit={handleSubmit}>

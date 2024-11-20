@@ -1,9 +1,12 @@
 .kolaborasi {
     margin: 0;
+    height: 100vh;
     font-family: "Poppins", sans-serif;
-    background: url("/bgweb.jpeg") no-repeat center center fixed;
+    background: url("/public/img/bgweb.jpeg") no-repeat center center fixed;
     background-size: cover;
     display: flex;
+    width: 100vw;
+    height: 100vh;
   }
   
   .kolaborasi .content {
@@ -25,7 +28,7 @@
   }
   
   .kolaborasi .task-container {
-    width: 75vw;
+    width: 70vw;
     height: 78vh;
     background-color: #d0e4ff;
     border-radius: 10px;
@@ -44,7 +47,7 @@
   
     bottom: 65px;
     position: fixed;
-    right: 110px !important;
+    right: 80px !important;
     width: 65%;
     box-sizing: border-box;
   }

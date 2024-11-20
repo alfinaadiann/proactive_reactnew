@@ -11,7 +11,7 @@ const Sidebar = () => {
         src="https://i.pinimg.com/564x/d7/d0/13/d7d013aa4c1ee9bc96fc8ee329467d34.jpg"
         width="80"
       />
-      <h2>Profil Saya</h2>
+      <h2 style={{ marginLeft: "10px" }}>Profil Saya</h2>
       </NavLink>
       <NavLink to="/HariIni"><i className="fas fa-calendar-day"></i> Hari Ini</NavLink>
       <NavLink to="/Mendatang"><i className="fas fa-calendar-alt"></i> Mendatang</NavLink>

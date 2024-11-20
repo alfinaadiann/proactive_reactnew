@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="pagedaftar">
       <div className="left-section">
         <div className="carousel">
           <button className="arrow left-arrow">&#10094;</button>
@@ -32,9 +32,9 @@ const Login = () => {
 
       <div className="right-section">
         <div className="content">
-          <div className="logo">
-            <img src="/img/logo.png" alt="ProActive Logo" />
-          </div>
+            <div className="logo">
+              <img src="/img/logo.png" alt="ProActive Logo" />
+            </div>
           <h1>Selamat datang</h1>
           <p>Silahkan login terlebih dahulu untuk memulai</p>
 

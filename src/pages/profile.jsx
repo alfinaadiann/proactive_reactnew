@@ -47,7 +47,7 @@ const Profile = () => {
       {/* Profile Section */}
       <div className="profile-section">
         <div className="profile-card">
-          <img src=".img/Profil.png" alt="Profile Picture" />
+          <img src="https://i.pinimg.com/564x/d7/d0/13/d7d013aa4c1ee9bc96fc8ee329467d34.jpg" alt="Profile Picture" />
           <h2>{formData.fullname}</h2>
           <p>{formData.email}</p>
           <form>

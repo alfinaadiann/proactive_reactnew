@@ -1,11 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-html {
+.pagedaftar body {
     width: 100vw;
     height: 100vh;
     font-family: Poppins, sans-serif;
@@ -15,16 +8,15 @@ html {
     background-color: #f0f0f0;
     overflow: hidden; /* Mencegah scroll */
 }
-
-.container {
+.pagedaftar {
     display: flex;
     width: 100vw;
     height: 100vh;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.left-section,
-.right-section {
+.pagedaftar .left-section,
+.pagedaftar .right-section {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -33,7 +25,7 @@ html {
     padding: 20px;
 }
 
-.left-section {
+.pagedaftar .left-section {
     background-image: url('img/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -42,7 +34,7 @@ html {
     overflow: hidden;
 }
 
-.left-section::before {
+.pagedaftar .left-section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -53,13 +45,13 @@ html {
     z-index: 1;
 }
 
-.left-section .carousel,
-.left-section .description {
+.pagedaftar .left-section .carousel,
+.pagedaftar .left-section .description {
     position: relative;
     z-index: 2;
 }
 
-.carousel {
+.pagedaftar .carousel {
     position: relative;
     width: 50%;
     display: flex;
@@ -67,12 +59,12 @@ html {
     justify-content: center;
 }
 
-.illustration {
+.pagedaftar .illustration {
     width: 100%;
     height: auto;
 }
 
-.arrow {
+.pagedaftar .arrow {
     font-size: 2rem;
     color: white;
     background: none;
@@ -83,15 +75,15 @@ html {
     transform: translateY(-50%);
 }
 
-.left-arrow {
+.pagedaftar .left-arrow {
     left: -20px;
 }
 
-.right-arrow {
+.pagedaftar .right-arrow {
     right: -20px;
 }
 
-.description {
+.pagedaftar .description {
     margin: 20px auto;
     padding: 10px 20px;
     font-size: 1rem;
@@ -102,53 +94,51 @@ html {
     min-height: 50px;
 }
 
-.right-section {
-    background: url("/bgweb.jpeg") no-repeat center center fixed;
+.pagedaftar .right-section {
+    background: url("/img/bgweb.jpeg") no-repeat center center fixed;
     background-size: cover;
-    background-color: #f9f9f9;
     color: #333;
 }
 
-.right-section .content {
+.pagedaftar .right-section .content {
     width: 80%;
     max-width: 400px;
     text-align: start;
+    padding-top: 40px;
 }
 
-.logo img {
+.pagedaftar .logo img {
     width: 60px;
-    margin-bottom: 20px;
 }
 
-h1 {
+.pagedaftar h1 {
     color: #ffffff;
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
-p {
+.pagedaftar p {
     color: #ffffff;
     font-size: 1rem;
-    margin-bottom: 20px;
     text-align: start;
 }
 
-form {
+.pagedaftar form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-label {
+.pagedaftar label {
     font-size: 0.9rem;
     color: #ffffff;
     text-align: start;
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"],
-input[type="tel"] {
+.pagedaftar input[type="email"],
+.pagedaftar input[type="password"],
+.pagedaftar input[type="text"],
+.pagedaftar input[type="tel"] {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -156,14 +146,14 @@ input[type="tel"] {
     border-radius: 5px;
 }
 
-.forgot-password {
+.pagedaftar .forgot-password {
     font-size: 0.9rem;
     color: #95caff;
     text-align: left;
     display: block;
 }
 
-.login-button {
+.pagedaftar .login-button {
     background-color: #3300FF;
     color: white;
     padding: 10px;
@@ -175,7 +165,7 @@ input[type="tel"] {
     transition: 0.3s;
 }
 
-.daftar-button {
+.pagedaftar .daftar-button {
     background-color: #3300FF;
     color: white;
     padding: 10px;
@@ -187,19 +177,19 @@ input[type="tel"] {
     transition: 0.3s;
 }
 
-.login-button:hover,
-.daftar-button:hover {
+.pagedaftar .login-button:hover,
+.pagedaftar .daftar-button:hover {
     background-color: #568bf3;
 }
 
-.separator {
+.pagedaftar .separator {
     margin: 10px 0;
     text-align: center;
     color: #aaa;
     font-size: 0.9rem;
 }
 
-.google-login {
+.pagedaftar .google-login {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,24 +204,24 @@ input[type="tel"] {
     transition: 0.3s;
 }
 
-.google-login img {
+.pagedaftar .google-login img {
     width: 20px;
     margin-right: 10px;
 }
 
-.google-login:hover {
+.pagedaftar .google-login:hover {
     background-color: #f2f2f2;
 }
 
-.register-link {
-    margin-top: 10px;
+.pagedaftar .register-link {
     font-size: 0.9rem;
 }
 
-.register-link a {
+.pagedaftar .register-link a {
     color: #95caff;
 }
 
-.register-link a:hover {
+.pagedaftar .register-link a:hover {
     text-decoration: underline;
 }
+
