@@ -41,33 +41,8 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile-container">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <img
-          src=".img/profil.png"
-          alt="User Profile Picture"
-        />
-        <h2>Profil Saya</h2>
-        <a href="hari ini.html">
-          <i className="fas fa-calendar-day" style={{ marginRight: "8px" }}></i> Hari Ini
-        </a>
-        <a href="mendatang.html">
-          <i className="fas fa-calendar-alt" style={{ marginRight: "8px" }}></i> Mendatang
-        </a>
-        <a href="tugas selesai.html">
-          <i className="fas fa-check" style={{ marginRight: "8px" }}></i> Tugas Selesai
-        </a>
-        <a href="#">
-          <i className="fas fa-calendar" style={{ marginRight: "8px" }}></i> Kalender
-        </a>
-        <a href="pomodoro.html">
-          <i className="fas fa-clock" style={{ marginRight: "8px" }}></i> Waktu
-        </a>
-        <a href="kolaborasi.html">
-          <i className="fas fa-users" style={{ marginRight: "8px" }}></i> Kolaborasi
-        </a>
-      </div>
+    <div className="profile">
+      <Sidebar />
 
       {/* Profile Section */}
       <div className="profile-section">
