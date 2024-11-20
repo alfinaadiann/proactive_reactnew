@@ -9,6 +9,7 @@ import Kalender from './pages/Kalender';
 import Kolaborasi from './pages/Kolaborasi';
 import Mendatang from './pages/Mendatang';
 import Profile from './pages/Profile';
+import LandingPage from './landingpagemain';
 
 function App() {
   return (
@@ -19,9 +20,9 @@ function App() {
         {/* <Route path="/ProPage" element={<ProPage />} /> */}
         {/* <Route path="/AboutProActive" element={<AboutProActive />} /> */}
         {/* <Route path="/FiturPage" element={<FiturPage />} /> */}
+        <Route path="/" element={<LandingPage />} />
         <Route path="/HariIni" element={<HariIni />} />
         <Route path="/TugasSelesai" element={<TugasSelesai />} />
-        <Route path="/Mendatang" element={<Mendatang />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Daftar" element={<Daftar />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Kalender" element={<Kalender />} />
         <Route path="/Kolaborasi" element={<Kolaborasi />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Mendatang" element={<Mendatang/>} />
       </Routes>
     </BrowserRouter>
   );
