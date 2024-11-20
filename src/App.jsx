@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Komponen yang tampil di semua halaman */}
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         {/* Route untuk setiap halaman */}
         <Route path="/" element={<LandingPage />} />
