@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from '../components/Sidebar';
+import { useNavigate } from "react-router-dom"; // Tambahkan ini
 import '../styles/profil.css';
+import Sidebar from '../components/Sidebar';
 
 const Profile = () => {
+  const navigate = useNavigate(); // Inisialisasi useNavigate
   const [isEditable, setIsEditable] = useState(false);
   const [formData, setFormData] = useState({
     fullname: "Jane Doe",
     username: "janedoe",
     email: "janedoe@gmail.com",
     phone: "081234567890",
+    password: "oldpassword123", // Simulasi password lama (hardcoded untuk contoh ini)
   });
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  const [passwordInput, setPasswordInput] = useState("");
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
   // Load data dari localStorage saat komponen dimuat
   useEffect(() => {
@@ -39,15 +48,46 @@ const Profile = () => {
   };
 
   const handlePasswordChange = () => {
+    if (!oldPassword || !newPassword || !confirmPassword) {
+      setError("Harap isi semua kolom password.");
+      return;
+    }
+    if (oldPassword !== formData.password) {
+      setError("Password lama tidak sesuai.");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setError("Password baru dan konfirmasi tidak cocok.");
+      return;
+    }
+
     alert("Kata sandi Anda telah diperbarui.");
+    setFormData((prevData) => ({ ...prevData, password: newPassword })); // Update password
+    localStorage.setItem("profileData", JSON.stringify({ ...formData, password: newPassword }));
     setShowPasswordModal(false);
+    setError(""); // Reset error
+    setOldPassword("");
+    setNewPassword("");
+    setConfirmPassword("");
+    navigate("/Login"); // Navigasikan ke halaman login
   };
 
   const handleDeleteAccount = () => {
-    // Logika menghapus akun
+    if (!passwordInput) {
+      setError("Harap masukkan password Anda untuk menghapus akun.");
+      return;
+    }
+    if (passwordInput !== formData.password) {
+      setError("Password tidak sesuai.");
+      return;
+    }
+
     alert("Akun Anda telah dihapus.");
     localStorage.removeItem("profileData"); // Hapus data dari localStorage
     setShowDeleteModal(false);
+    setError(""); // Reset error
+    setPasswordInput("");
+    navigate("/daftar"); // Navigasikan ke halaman sign up
   };
 
   return (
@@ -139,9 +179,25 @@ const Profile = () => {
               &times;
             </span>
             <h2>Ganti Kata Sandi</h2>
-            <input type="password" placeholder="Kata Sandi Lama" />
-            <input type="password" placeholder="Kata Sandi Baru" />
-            <input type="password" placeholder="Konfirmasi Kata Sandi Baru" />
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            <input
+              type="password"
+              placeholder="Kata Sandi Lama"
+              value={oldPassword}
+              onChange={(e) => setOldPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Kata Sandi Baru"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Konfirmasi Kata Sandi Baru"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
             <button onClick={handlePasswordChange}>Ganti Kata Sandi</button>
           </div>
         </div>
@@ -155,11 +211,17 @@ const Profile = () => {
               &times;
             </span>
             <h2>Hapus Akun</h2>
+            {error && <p style={{ color: "red" }}>{error}</p>}
             <p>
               Tindakan ini dapat mengakibatkan riwayat tugasmu terhapus permanen.
               Apakah Anda yakin?
             </p>
-            <input type="password" placeholder="Masukkan Password" />
+            <input
+              type="password"
+              placeholder="Masukkan Password"
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+            />
             <button onClick={handleDeleteAccount}>Hapus Akun</button>
           </div>
         </div>
