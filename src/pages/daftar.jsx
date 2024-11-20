@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../styles/daftar.css';
+import "../styles/daftar.css";
 
 const Daftar = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [formData, setFormData] = useState({
+    nama: "",
+    username: "",
+    email: "",
+    noHandphone: "",
+    password: "",
+    konfirmasiPassword: "",
+  });
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const descriptions = [
-    "fitur to-do list yang sederhana namun kuat, ProActive mempermudah perencanaan harian hingga pengelolaan proyek besar.",
+    "Fitur to-do list yang sederhana namun kuat, ProActive mempermudah perencanaan harian hingga pengelolaan proyek besar.",
     "To-do list yang praktis namun bertenaga, ProActive memudahkan pengelolaan dari tugas harian hingga manajemen proyek kompleks.",
     "Dengan fitur to-do list yang intuitif namun andal, ProActive memfasilitasi perencanaan dari aktivitas sehari-hari hingga pengelolaan proyek besar.",
   ];
@@ -16,8 +25,52 @@ const Daftar = () => {
     setCurrentSlide((prev) => (prev + direction + descriptions.length) % descriptions.length);
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateUsername = (username) => {
+    const usernameRegex = /^[a-zA-Z0-9]+$/;
+    return usernameRegex.test(username);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { nama, username, email, noHandphone, password, konfirmasiPassword } = formData;
+
+    if (!nama || !username || !email || !noHandphone || !password || !konfirmasiPassword) {
+      setErrorMessage("Harap isi semua kolom.");
+      return;
+    }
+
+    if (!validateUsername(username)) {
+      setErrorMessage("Nama pengguna hanya boleh mengandung huruf dan angka.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setErrorMessage("Format email tidak valid.");
+      return;
+    }
+
+    if (password !== konfirmasiPassword) {
+      setErrorMessage("Password dan konfirmasi password tidak cocok.");
+      return;
+    }
+
+    // Simpan data ke localStorage
+    localStorage.setItem("profileData", JSON.stringify(formData));
+    setErrorMessage(""); // Reset error
+    alert("Pendaftaran berhasil!");
     navigate("/Login");
   };
 
@@ -28,9 +81,17 @@ const Daftar = () => {
           <button className="arrow left-arrow" onClick={() => changeSlide(-1)}>
             &#10094;
           </button>
-          <img src="/img/illustration1.png" alt="Illustration" style={{ display: currentSlide === 0 ? "block" : "none", width: "70%" }} />
-          <img src="/img/illustration2.png" alt="Illustration" style={{ display: currentSlide === 1 ? "block" : "none", width: "70%" }} />
-          <img src="/img/illustration3.png" alt="Illustration" style={{ display: currentSlide === 2 ? "block" : "none", width: "70%" }} />
+          {descriptions.map((desc, index) => (
+            <img
+              key={index}
+              src={`/img/illustration${index + 1}.png`}
+              alt={`Illustration ${index + 1}`}
+              style={{
+                display: currentSlide === index ? "block" : "none",
+                width: "70%",
+              }}
+            />
+          ))}
           <button className="arrow right-arrow" onClick={() => changeSlide(1)}>
             &#10095;
           </button>
@@ -40,23 +101,79 @@ const Daftar = () => {
 
       <div className="right-section">
         <div className="content">
-          <h1 style={{ marginTop: "-30px" }}>Buat akun</h1>
-          <p>Silahkan lengkapi data dibawah ini untuk membuat akun</p>
+          <h1 style={{ marginTop: "-30px" }}>Buat Akun</h1>
+          <p>Silahkan lengkapi data di bawah ini untuk membuat akun</p>
 
           <form onSubmit={handleSubmit}>
-            <label htmlFor="nama">Nama</label>
-            <input type="text" id="nama" name="nama" placeholder="Nama" required />
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-            <label htmlFor="no-handphone">No.Handphone</label>
-            <input type="tel" id="no-handphone" name="noHandphone" placeholder="No.Handphone" required />
+            <label htmlFor="nama">Nama</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Nama"
+              value={formData.nama}
+              onChange={handleInputChange}
+              required
+            />
+
+            <label htmlFor="username">Nama Pengguna</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Nama Pengguna"
+              value={formData.username}
+              onChange={handleInputChange}
+              required
+            />
+
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+
+            <label htmlFor="no-handphone">No. Handphone</label>
+            <input
+              type="tel"
+              id="no-handphone"
+              name="noHandphone"
+              placeholder="No. Handphone"
+              value={formData.noHandphone}
+              onChange={handleInputChange}
+              required
+            />
 
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" required />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleInputChange}
+              required
+            />
 
             <label htmlFor="konfirmasi-password">Konfirmasi Password</label>
-            <input type="password" id="konfirmasi-password" name="konfirmasiPassword" placeholder="Password" required />
+            <input
+              type="password"
+              id="konfirmasi-password"
+              name="konfirmasiPassword"
+              placeholder="Konfirmasi Password"
+              value={formData.konfirmasiPassword}
+              onChange={handleInputChange}
+              required
+            />
 
-            <button type="submit" className="daftar-button">
+            <button href="/login" type="submit" className="daftar-button">
               Daftar
             </button>
           </form>

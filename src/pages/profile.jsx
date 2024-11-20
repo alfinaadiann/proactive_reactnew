@@ -107,7 +107,7 @@ const Profile = () => {
                 <input
                   type="text"
                   id="fullname"
-                  value={formData.fullname}
+                  value={formData.nama}
                   onChange={handleInputChange}
                   readOnly={!isEditable}
                 />
@@ -140,7 +140,7 @@ const Profile = () => {
                 <input
                   type="tel"
                   id="phone"
-                  value={formData.phone}
+                  value={formData.noHandphone}
                   onChange={handleInputChange}
                   readOnly={!isEditable}
                 />
