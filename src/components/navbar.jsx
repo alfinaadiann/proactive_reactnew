@@ -61,7 +61,7 @@ function Navbar() {
   return (
     <NavbarContainer>
       <LogoContainer href="/">
-        <LogoImage src="/assets/logo/logo biru.svg" alt="Logo" />
+        <LogoImage src="/img/logo.png" alt="Logo" />
         <Title>
           <ProText>Pro</ProText>
           <ActiveText>Active</ActiveText>

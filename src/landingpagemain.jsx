@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from "../components/navbar.jsx";
-import LandingPage from '../components/landingpage';
-import ProPage from '../components/propage';
-import AboutProActive from '../components/aboutproactive';
-import FiturPage from '../components/fiturpage';
-import Footer from '../components/footer';
+import Navbar from "./components/navbar.jsx";
+import LandingPage from './components/landingpage.jsx';
+import ProPage from './components/propage.jsx';
+import AboutProActive from './components/aboutproactive.jsx';
+import FiturPage from './components/fiturpage.jsx';
+import Footer from './components/footer.jsx';
 
 //ini buat manggil landing page//
 function landingpagemain() {
