@@ -14,6 +14,8 @@ import LandingPage from './landingpagemain';
 function App() {
   return (
     <BrowserRouter>
+      {/* Komponen yang tampil di semua halaman */}
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<LandingPage />}/>
         <Route path="/HariIni" element={<HariIni />} />

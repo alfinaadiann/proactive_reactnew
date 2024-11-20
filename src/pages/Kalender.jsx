@@ -102,7 +102,7 @@ const Kalender = () => {
 };
 
 const styles = {
-  app: { padding: "14px", textAlign: "center" },
+  app: { width: "97.5vw", padding: "5px", textAlign: "center" },
   header: { marginBottom: "20px", fontSize: "24px" },
   form: { marginBottom: "20px" },
   input: { margin: "0 10px", padding: "5px" },
