@@ -5,7 +5,7 @@ import "../styles/daftar.css";
 const Daftar = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
-    nama: "",
+    fullname: "",
     username: "",
     email: "",
     noHandphone: "",
@@ -113,7 +113,7 @@ const Daftar = () => {
               id="nama"
               name="fullname"
               placeholder="fullname"
-              value={formData.nama}
+              value={formData.fullname}
               onChange={handleInputChange}
               required
             />
