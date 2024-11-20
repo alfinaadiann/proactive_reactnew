@@ -18,8 +18,31 @@ const Daftar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/Login");
-  };
+  
+    const nama = e.target.nama.value;
+    const noHandphone = e.target.noHandphone.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const konfirmasiPassword = e.target.konfirmasiPassword.value;
+  
+    if (password !== konfirmasiPassword) {
+      alert("Password dan konfirmasi password tidak cocok!");
+      return;
+    }
+  
+    const formData = {
+      fullname: nama,
+      phone: noHandphone,
+      email: email,
+      password: password,
+    };
+  
+    // Simpan data ke localStorage
+    localStorage.setItem("profileData", JSON.stringify(formData));
+  
+    // Arahkan pengguna ke halaman Login
+    navigate("/login");
+  };  
 
   return (
     <div className="pagedaftar">
@@ -49,6 +72,9 @@ const Daftar = () => {
 
             <label htmlFor="no-handphone">No.Handphone</label>
             <input type="tel" id="no-handphone" name="noHandphone" placeholder="No.Handphone" required />
+
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Masukan Email" required />
 
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Password" required />
