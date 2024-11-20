@@ -60,19 +60,19 @@ body {
   font-size: medium;
 }
 
-.input-group {
+.profile .input-group {
   display: flex;
   gap: 20px;
 }
 
-.input-group div {
+.profile .input-group div {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.profile-card input {
+.profile .profile-card input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -83,21 +83,21 @@ body {
   box-sizing: border-box;
 }
 
-.profile-card label {
+.profile .profile-card label {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 5px;
   color: #23395d;
 }
 
-.profile-card .button-container {
+.profile .profile-card .button-container {
   display: flex;
   gap: 10px;
   width: 100%;
   justify-content: center;
 }
 
-.profile-card button {
+.profile .profile-card button {
   padding: 6px;
   border: none;
   border-radius: 6px;
@@ -107,23 +107,23 @@ body {
   transition: background 0.3s;
 }
 
-.edit-button {
+.profile .edit-button {
   background-color: #4a90e2;
 }
 
-.edit-button:hover {
+.profile .edit-button:hover {
   background-color: #357ab8;
 }
 
-.delete-button {
+.profile .delete-button {
   background-color: #e74c3c;
 }
 
-.delete-button:hover {
+.profile .delete-button:hover {
   background-color: #c0392b;
 }
 
-.change-password-button {
+.profile .change-password-button {
   background-color: #4a90e2;
   width: 100%;
   padding: 6px;
@@ -136,17 +136,17 @@ body {
   transition: background 0.3s;
 }
 
-.change-password-button:hover {
+.profile .change-password-button:hover {
   background-color: #357ab8;
 }
 
-.editable {
+.profile .editable {
   border: 1px solid #007bff;
   background-color: #f0f8ff;
 }
 
 /* Modal container styling */
-.modal {
+.profile .modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -161,7 +161,7 @@ body {
 }
 
 /* Modal content box */
-.modal-content {
+.profile .modal-content {
   background-color: #e0f0ff;
   padding: 15px;
   border-radius: 8px;
@@ -172,7 +172,7 @@ body {
 }
 
 /* Modal header style */
-.modal-content h2 {
+.profile .modal-content h2 {
   margin-top: 0;
   background-color: #23395d;
   color: #ffffff;
@@ -184,7 +184,7 @@ body {
 }
 
 /* Close button styling */
-.close {
+.profile .close {
   position: absolute;
   top: 8px;
   right: 10px;
@@ -193,12 +193,12 @@ body {
   cursor: pointer;
 }
 
-.close:hover {
+.profile .close:hover {
   color: #ff4d4d;
 }
 
 /* Input styling */
-.modal-content input[type="password"] {
+.profile .modal-content input[type="password"] {
   width: 100%;
   padding: 8px;
   margin: 8px 0;
@@ -209,7 +209,7 @@ body {
 }
 
 /* Button styling */
-.modal-content button {
+.profile .modal-content button {
   width: 100%;
   padding: 8px;
   background-color: #1a73e8;
@@ -221,76 +221,76 @@ body {
   margin-top: 8px;
 }
 
-.modal-content button:hover {
+.profile .modal-content button:hover {
   background-color: #005bb5;
 }
 
 /* Text paragraph styling inside modal */
-.modal-content p {
+.profile .modal-content p {
   color: #333333;
   margin: 10px 0;
   text-align: center;
 }
 
 @media (max-width: 768px) {
-  .sidebar {
+  .profile .sidebar {
     width: 100%;
     padding: 20px;
   }
 
-  .profile-card {
+  .profile .profile-card {
     padding: 15px;
     width: 90%;
   }
 
-  .profile-card h2 {
+  .profile .profile-card h2 {
     font-size: 16px;
   }
 
-  .profile-card img {
+  .profile .profile-card img {
     width: 60px;
     height: 60px;
   }
 
-  .input-group {
+  .profile .input-group {
     flex-direction: column;
   }
 
-  .sidebar a {
+  .profile .sidebar a {
     font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .sidebar {
+  .profile .sidebar {
     padding: 8px;
   }
 
-  .profile-card {
+  .profile .profile-card {
     padding: 10px;
     width: 100%;
   }
 
-  .profile-card h2 {
+  .profile .profile-card h2 {
     font-size: 14px;
   }
 
-  .profile-card img {
+  .profile .profile-card img {
     width: 50px;
     height: 50px;
   }
 
-  .profile-card p {
+  .profile .profile-card p {
     font-size: 12px;
   }
 
-  .sidebar a {
+  .profile .sidebar a {
     font-size: 10px;
   }
 }
 
 /* Tambahkan aturan berikut ke dalam .profile-section */
-.profile-section {
+.profile .profile-section {
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -303,7 +303,7 @@ body {
 
 /* Tambahkan aturan berikut jika diperlukan untuk menyesuaikan tampilan responsif */
 @media (max-width: 768px) {
-  .profile-section {
+  .profile .profile-section {
     margin-left: 0;
   }
 }
