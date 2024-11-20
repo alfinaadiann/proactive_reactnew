@@ -1,7 +1,8 @@
 .mendatang {
   background: url("/public/img/bgweb.jpeg") no-repeat center center fixed;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+  padding: 0px 250px 0px 0px;
 }
 
 .mendatang .content {
@@ -24,6 +25,7 @@
     overflow-x: auto;
     white-space: nowrap;
     margin-top: 30px;
+    flex-wrap: wrap;
   }
   
   .mendatang .board {
