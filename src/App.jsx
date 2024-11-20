@@ -5,6 +5,7 @@ import Login from './pages/masuk';
 import Daftar from './pages/daftar';
 import ForgotPassword from './pages/forgot_password';
 import Verifikasi from './pages/verifikasi';
+import Kalender from './pages/Kalender';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Daftar" element={<Daftar />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/Verifikasi" element={<Verifikasi />} />
+        <Route path="/Kalender" element={<Kalender />} />
       </Routes>
       {/* Komponen footer */}
       <Footer />
