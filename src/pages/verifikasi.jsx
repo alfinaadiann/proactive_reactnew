@@ -1,5 +1,5 @@
 import React from "react";
-import "./daftar.css"; // Gunakan CSS yang sama untuk menyamakan tampilan
+import '../styles/daftar.css'; // Gunakan CSS yang sama untuk menyamakan tampilan
 
 const Verifikasi = () => {
   const handleSubmit = (e) => {

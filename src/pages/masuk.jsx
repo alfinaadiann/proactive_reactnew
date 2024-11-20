@@ -1,5 +1,5 @@
 import React from "react";
-import "./daftar.css"; // Pastikan stylesheet sesuai dengan struktur folder Anda
+import '../styles/daftar.css'; // Pastikan stylesheet sesuai dengan struktur folder Anda
 
 const Login = () => {
   const login = () => {
