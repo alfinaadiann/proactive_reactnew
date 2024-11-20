@@ -107,12 +107,12 @@ const Daftar = () => {
           <form onSubmit={handleSubmit}>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-            <label htmlFor="nama">Nama</label>
+            <label htmlFor="fullname">Nama</label>
             <input
               type="text"
               id="nama"
-              name="nama"
-              placeholder="Nama"
+              name="fullname"
+              placeholder="fullname"
               value={formData.nama}
               onChange={handleInputChange}
               required
