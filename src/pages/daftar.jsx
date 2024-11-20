@@ -112,7 +112,7 @@ const Daftar = () => {
               type="text"
               id="nama"
               name="fullname"
-              placeholder="fullname"
+              placeholder="Fullname"
               value={formData.fullname}
               onChange={handleInputChange}
               required
